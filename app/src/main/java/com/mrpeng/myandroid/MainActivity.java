@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ViewPager mViewPager;
     private RadioGroup mRadioGroup;
     private MyFragmentAdapter mAdapter;
-    private int[] checkedId = {R.id.radio0, R.id.radio1, R.id.radio2, R.id.radio3};
+    private int[] checkedId = {R.id.rb_homepage, R.id.rb_ranking_list, R.id.rb_headlines, R.id.rb_dynamic,R.id.rb_mine};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,27 +29,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mViewPager.setOnPageChangeListener(new MyOnPagerChangerListener());
         mViewPager.setOffscreenPageLimit(5);
         mViewPager.setCurrentItem(2);
-        findViewById(R.id.radio0).setOnClickListener(this);
-        findViewById(R.id.radio1).setOnClickListener(this);
-        findViewById(R.id.radio2).setOnClickListener(this);
-        findViewById(R.id.radio3).setOnClickListener(this);
+        findViewById(R.id.rb_homepage).setOnClickListener(this);
+        findViewById(R.id.rb_ranking_list).setOnClickListener(this);
+        findViewById(R.id.rb_headlines).setOnClickListener(this);
+        findViewById(R.id.rb_dynamic).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int index = -1;
         switch (v.getId()) {
-            case R.id.radio0:
+            case R.id.rb_homepage:
                 index = 0;
                 break;
-            case R.id.radio1:
+            case R.id.rb_ranking_list:
                 index = 1;
                 break;
-            case R.id.radio2:
+            case R.id.rb_headlines:
                 index = 2;
                 break;
-            case R.id.radio3:
+            case R.id.rb_dynamic:
                 index = 3;
+                break;
+            case R.id.rb_mine:
+                index = 4;
                 break;
 
             default:
@@ -94,16 +97,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             int id = 0;
             switch (position) {
                 case 0:
-                    id = R.id.radio0;
+                    id = R.id.rb_homepage;
                     break;
                 case 1:
-                    id = R.id.radio1;
+                    id = R.id.rb_ranking_list;
                     break;
                 case 2:
-                    id = R.id.radio2;
+                    id = R.id.rb_headlines;
                     break;
                 case 3:
-                    id = R.id.radio3;
+                    id = R.id.rb_dynamic;
+                    break;
+                case 4:
+                    id = R.id.rb_mine;
                     break;
                 default:
                     break;

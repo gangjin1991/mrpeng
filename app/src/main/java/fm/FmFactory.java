@@ -21,6 +21,7 @@ public class FmFactory {
     private static final int TWO = 1;
     private static final int THREE = 2;
     private static final int FOUR = 3;
+    private static final int FIVE = 4;
 
 
     private Map<Integer, BaseFragment> fmcache = new HashMap<Integer, BaseFragment>();
@@ -40,6 +41,9 @@ public class FmFactory {
                     fragment = new CccFm();
                     break;
                 case FOUR:
+                    fragment = new DddFm();
+                    break;
+                case FIVE:
                     fragment = new DddFm();
                     break;
                 default:
