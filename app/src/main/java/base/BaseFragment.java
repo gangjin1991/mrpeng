@@ -1,28 +1,59 @@
 package base;
 
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import butterknife.ButterKnife;
 
 /**
-
- * <功能详细描述>
+ * Demo class
  *
- * @author pengjingnag
- * @see [相关类/方法]
- * @since [产品/模板版本]
- * @deprecated
+ * @author pengjingang
+ * @date 2018/1/30
  */
+
 public abstract class BaseFragment extends Fragment
 {
-    protected abstract void initPresenter();
+    protected View mRootView;
+    protected Context mContext;
 
-    /**
-     * 实现在fragment可见时才进行数据加载操作，即Fragment的懒加载。
-     * @param isVisibleToUser
-     */
+
+    @Nullable
     @Override
-    public void setUserVisibleHint(boolean isVisibleToUser)
-    {
-        initPresenter();
-        super.setUserVisibleHint(isVisibleToUser);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        initRootView(inflater, container);
+        ButterKnife.bind(this, mRootView);
+        return mRootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        init();
+    }
+
+    protected void init() {
+        mContext = getActivity();
+        initView();
+        initData();
+    }
+
+    protected abstract void initRootView(LayoutInflater inflater, ViewGroup container) ;
+
+    protected abstract void initView();
+
+    protected abstract void initData();
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+//        RefWatcher refWatcher = App.
+//        refWatcher.watch(this);
     }
 }

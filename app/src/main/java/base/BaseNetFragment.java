@@ -1,6 +1,8 @@
 package base;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.google.gson.Gson;
 
@@ -20,14 +22,6 @@ import view.MainStateView;
 
 public class BaseNetFragment extends BaseFragment implements MainStateView {
 
-    Gson gson=new Gson();
-
-
-
-    @Override
-    protected void initPresenter() {
-
-    }
 
     @Override
     public int setRequestMethod() {
@@ -71,6 +65,21 @@ public class BaseNetFragment extends BaseFragment implements MainStateView {
 
     @Override
     public void showLoadingView(boolean show) {
+
+    }
+
+    @Override
+    protected void initRootView(LayoutInflater inflater, ViewGroup container) {
+
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
 
     }
 }

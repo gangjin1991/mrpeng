@@ -1,7 +1,5 @@
 package fm;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +18,13 @@ import base.BaseFragment;
  * @since [产品/模板版本]
  * @deprecated
  */
-public class BbbFm extends BaseFragment
+public class MoviewFragment extends BaseFragment
 {
-
 
     @Override
     protected void initRootView(LayoutInflater inflater, ViewGroup container) {
-        mRootView= View.inflate(getContext(), R.layout.fm_bbb, null);
+
+        mRootView=inflater.inflate(R.layout.fm_meinv, container, false);
     }
 
     @Override
@@ -38,6 +36,4 @@ public class BbbFm extends BaseFragment
     protected void initData() {
 
     }
-
-
 }

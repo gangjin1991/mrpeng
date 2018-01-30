@@ -32,19 +32,19 @@ public class FmFactory {
         if (fragment == null) {
             switch (type) {
                 case ONE:
-                    fragment = new BaiduMeinv();
+                    fragment = new MoviewFragment();
                     break;
                 case TWO:
                     fragment = new BbbFm();
                     break;
                 case THREE:
-                    fragment = new CccFm();
+                    fragment = new MoviewFragment();
                     break;
                 case FOUR:
-                    fragment = new DddFm();
+                    fragment = new MoviewFragment();
                     break;
                 case FIVE:
-                    fragment = new DddFm();
+                    fragment = new MoviewFragment();
                     break;
                 default:
                     break;
